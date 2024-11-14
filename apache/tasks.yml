@@ -1,0 +1,23 @@
+- name: ensure apache is at the latest version
+  apt:
+    name: apache2
+    state: latest
+
+- name: write the apache2 ports.conf config file
+  template:
+    src: apache/port.conf.j2
+    dest: /etc/apache2/ports.conf
+  notify:
+    - restart apache
+
+- name: write the apache2 index.html file
+  template:
+    src: apache/index.html.j2
+    dest: /var/www/html/index.html
+  notify:
+    - restart apache
+
+- name: check apache2 is started
+  service:
+    name: apache2
+    state: started
