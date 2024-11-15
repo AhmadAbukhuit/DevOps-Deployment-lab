@@ -35,3 +35,7 @@ First prepare vagrant file to start the servers :
     - Configure the posrt.conf file in apache2 using jenga 
     - check the configuration using curl command 
 
+# Create roles for multi services 
+    - Create role for apache2
+        $ ansible-galaxy init roles/apache2
+    - Write the playbook2.yml for this role
