@@ -1,0 +1,4 @@
+- name: "Install Nginx Packages"
+  apt: 
+    name: nginx
+    state: present 

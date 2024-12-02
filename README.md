@@ -39,3 +39,11 @@ First prepare vagrant file to start the servers :
     - Create role for apache2
         $ ansible-galaxy init roles/apache2
     - Write the playbook2.yml for this role
+    - Create role for common things for all servers
+        $ ansible-galaxy init roles/common
+    - Create role for nginx service
+        $ ansible-galaxy init roles/nginx
+    - Edit the playbook2.yml for the new roles 
+    - Edit the files for each role 
+    * After this configuration we configure the nginx server to balnace the load between the web servers and if we call it it will give the contant of web01 or web02
+

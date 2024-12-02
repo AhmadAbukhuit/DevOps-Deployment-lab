@@ -1,5 +1,11 @@
 - hosts: webservers
   become: yes
   roles:
+    - common
     - apache2
 
+- hosts: proxy
+  become: yes
+  roles:
+    - common 
+    - nginx
